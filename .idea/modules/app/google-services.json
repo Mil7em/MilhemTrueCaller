@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "718318653271",
+    "firebase_url": "https://milhemtruecaller.firebaseio.com",
+    "project_id": "milhemtruecaller",
+    "storage_bucket": "milhemtruecaller.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718318653271:android:29e80760f7dffeb89ef812",
+        "android_client_info": {
+          "package_name": "mlhm.mohammed.milhemtruecaller"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718318653271-nfis48m6q8od994b114lkqib8nkpf1d4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mlhm.mohammed.milhemtruecaller",
+            "certificate_hash": "584a6c965380e5ea23090e80162955a62e864566"
+          }
+        },
+        {
+          "client_id": "718318653271-9a86kh7lhsbest9p66k1o3lkfpqr0rqe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAX7wgf4oeDRVS_21RCUv7OoknEpCr_ckk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718318653271-9a86kh7lhsbest9p66k1o3lkfpqr0rqe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

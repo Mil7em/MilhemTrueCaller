@@ -1,4 +1,4 @@
-package mlhm.mohammed.milhemtruecaller.MyUI;
+package mlhm.mohammed.milhemtruecaller.Data.MyUI;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -104,9 +104,3 @@ public class AddTask extends AppCompatActivity {
     }
 }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-    }
-}

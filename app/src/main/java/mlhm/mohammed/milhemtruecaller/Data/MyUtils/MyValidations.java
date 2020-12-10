@@ -1,4 +1,4 @@
-package mlhm.mohammed.milhemtruecaller.MyUtils;
+package mlhm.mohammed.milhemtruecaller.Data.MyUtils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

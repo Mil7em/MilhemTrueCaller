@@ -1,4 +1,4 @@
-package mlhm.mohammed.milhemtruecaller.MyUI;
+package mlhm.mohammed.milhemtruecaller.Data.MyUI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import mlhm.mohammed.milhemtruecaller.MyUtils.MyValidations;
+import mlhm.mohammed.milhemtruecaller.Data.MyUtils.MyValidations;
 import mlhm.mohammed.milhemtruecaller.R;
 
 public class signup extends AppCompatActivity {

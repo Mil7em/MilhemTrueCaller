@@ -9,16 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="mlhm.mohammed.milhemtruecaller.MyUI.AddTask"></activity>
-        <activity android:name="mlhm.mohammed.milhemtruecaller.MyUI.signin" />
-        <activity android:name="mlhm.mohammed.milhemtruecaller.MyUI.signup" />
-        <activity android:name="mlhm.mohammed.milhemtruecaller.MyUI.MainActivity">
+        <activity android:name=".Data.MyUI.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".Data.MyUI.signup">
+
+        </activity>
+        <activity android:name=".Data.MyUI.AddTask"/>
+        <activity android:name=".Data.MyUI.signin"/>
     </application>
 
 </manifest>

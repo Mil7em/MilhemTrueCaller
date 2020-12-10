@@ -1,4 +1,4 @@
-package mlhm.mohammed.milhemtruecaller.MyUI;
+package mlhm.mohammed.milhemtruecaller.Data.MyUI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,9 +42,5 @@ public class signin extends AppCompatActivity {
     private void validateForm(){
 
     }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signin);
-    }
+
 }

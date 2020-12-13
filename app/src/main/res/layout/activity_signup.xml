@@ -21,48 +21,48 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="FirstName" />
+                android:hint="FirstName"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/etLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="LastName" />
+                android:hint="LastName"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/etPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="phone"
-                android:text="Enter PhoneNumber" />
+                android:hint="Enter PhoneNumber"
+                android:inputType="phone" />
 
             <EditText
                 android:id="@+id/etEmail2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textEmailAddress"
-                android:text="Enter Email" />
+                android:hint="Enter Email"
+                android:inputType="textEmailAddress" />
 
             <EditText
                 android:id="@+id/etPassWord1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="EnterPassword" />
+                android:hint="EnterPassword"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/etPassWord2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="ReEnterPassword" />
+                android:hint="ReEnterPassword"
+                android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/btnSave"

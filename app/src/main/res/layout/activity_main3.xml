@@ -8,12 +8,12 @@
 
     <Button
         android:id="@+id/btnsigninMain"
-        android:layout_width="228dp"
-        android:layout_height="115dp"
+        android:layout_width="323dp"
+        android:layout_height="92dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="88dp"
-        android:layout_marginBottom="444dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="464dp"
         android:layout_weight="1"
         android:backgroundTint="#03A9F4"
         android:lineSpacingExtra="18sp"
@@ -28,13 +28,14 @@
 
     <Button
         android:id="@+id/btnSignUpMain"
-        android:layout_width="346dp"
-        android:layout_height="95dp"
+        android:layout_width="222dp"
+        android:layout_height="91dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="73dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginBottom="233dp"
         android:layout_weight="1"
         android:backgroundTint="#8BC34A"
         android:text="sign up" />
+
 </RelativeLayout>

@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">MilhemTrueCaller</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="tab_text_1">To Buy</string>
+    <string name="tab_text_2">Suggested</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Cart">Spinner</string>
+    <string-array name="item_kind">
+        <item>Vegetables/fruits</item>
+        <item>Clothes</item>
+        <item>Canned food</item>
+        <item>Health tools</item>
+        <item>meats</item>
+        <item>electric tools</item>
+    </string-array>
 </resources>

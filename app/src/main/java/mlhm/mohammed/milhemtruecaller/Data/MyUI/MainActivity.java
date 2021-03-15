@@ -1,12 +1,20 @@
 package mlhm.mohammed.milhemtruecaller.Data.MyUI;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
+
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+import mlhm.mohammed.milhemtruecaller.Data.MyUI.ui.main.SectionsPagerAdapter;
 import mlhm.mohammed.milhemtruecaller.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,22 +22,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
-        Button btnsigninMain=findViewById(R.id.btnsigninMain);
-        Button btnsignupMain=findViewById(R.id.btnSignUpMain);
-        btnsigninMain.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_main);
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs = findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
+        FloatingActionButton fab = findViewById(R.id.fab);
+
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,signin.class));    }
-        });
+                Snackbar.make(view, "To Add Products", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
 
-
-                btnsignupMain.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        startActivity(new Intent(MainActivity.this,signup.class));
-
-                    }
-                });
+                startActivity(new Intent(getApplicationContext(),AddProductActivity.class));
             }
+        });
+    }
 }

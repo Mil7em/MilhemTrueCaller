@@ -1,12 +1,19 @@
 package mlhm.mohammed.milhemtruecaller.Data.MyUI;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import mlhm.mohammed.milhemtruecaller.Data.MyUtils.MyValidations;
@@ -15,6 +22,7 @@ import mlhm.mohammed.milhemtruecaller.R;
 public class signup extends AppCompatActivity {
     private EditText etFirstName,etLastName,etPhone,etEmail2,etPassWord2,etPassWord1;
     private Button btnSave;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +36,11 @@ public class signup extends AppCompatActivity {
             etPassWord1=findViewById(R.id.etPassWord1);
             btnSave = findViewById(R.id.btnSave);
 
+
             btnSave.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    validateForm();
 
                 }
             });
@@ -38,6 +48,7 @@ public class signup extends AppCompatActivity {
 
 
             }
+
         }
 
         /**
@@ -69,17 +80,17 @@ public class signup extends AppCompatActivity {
                 etPassWord2.setError("passwords must be the same!");
             }
             else {
-                MyValidations myValidations = new MyValidations();
-                if (myValidations.validatepassword(passw1) == false) {
-                    isOk = false;
-                    etPassWord1.setError("Invalid Password!");
-                }
+//                MyValidations myValidations = new MyValidations();
+//                if (myValidations.validatepassword(passw1) == false) {
+//                    isOk = false;
+//                    etPassWord1.setError("Invalid Password!");
+//                }
             }
 
             if(isOk)
             {
                 //toDo: create account and return to sign in screen/close this screen
-                createNewAccount(email,passw1,fname,lname,phone);
+                createNewAccount(email,passw1);
             }
 
 
@@ -89,12 +100,25 @@ public class signup extends AppCompatActivity {
          *
          * @param email
          * @param passw1
-         * @param fname
-         * @param lname
-         * @param phone
+
          */
-        private void createNewAccount(String email, String passw1, String fname, String lname, String phone)
+        private void createNewAccount(String email, String passw1)
         {
-            FirebaseAuth auth=FirebaseAuth.getInstance();
-    }
+            mAuth = FirebaseAuth.getInstance();
+            mAuth.createUserWithEmailAndPassword(email,passw1)
+                    .addOnCompleteListener(signup.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(),"failed"+task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                                task.getException().printStackTrace();
+                            } else {
+                                signup.this.startActivity(new Intent(signup.this, signin.class));
+                                signup.this.finish();
+                            }
+                        }
+                    });    }
+
+
 }

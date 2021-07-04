@@ -2,13 +2,23 @@ package mlhm.mohammed.milhemtruecaller.Data.MyUI.ui.main;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import mlhm.mohammed.milhemtruecaller.Data.MyUtils.MyProduct;
 import mlhm.mohammed.milhemtruecaller.R;
 
 /**
@@ -27,6 +37,8 @@ public class ToBuyFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     ListView lstvToBuy;
+    private ToBuyProductAdapter adapter;
+
     public ToBuyFragment() {
         // Required empty public constructor
     }
@@ -62,10 +74,44 @@ public class ToBuyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+         adapter=new ToBuyProductAdapter(getContext());
         View view = inflater.inflate(R.layout.fragment_to_buy, container, false);
         lstvToBuy=view.findViewById(R.id.lstvToBuy);
-
-
+        lstvToBuy.setAdapter(adapter);
+        readTasksFromFirebase(null);
         return view;
+
+    }
+    public void readTasksFromFirebase(final String stTosearch)
+    {
+        FirebaseDatabase database=FirebaseDatabase.getInstance();
+        FirebaseAuth auth=FirebaseAuth.getInstance();
+        String uid=auth.getUid();
+        DatabaseReference reference= database.getReference();
+        reference.child("AllProducts").child(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                adapter.clear();
+                for (DataSnapshot d : dataSnapshot.getChildren())
+                {
+                    MyProduct t=d.getValue(MyProduct.class);
+                    Log.d("MyProduct",t.toString());
+                    if (stTosearch==null || stTosearch.length()==0)
+                    {
+                        if (t.isCompleted()==false)
+                          adapter.add(t);
+                    }
+                    else
+                        if (t.getName().contains(stTosearch))
+                            if (t.isCompleted()==false)
+                                adapter.add(t);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }

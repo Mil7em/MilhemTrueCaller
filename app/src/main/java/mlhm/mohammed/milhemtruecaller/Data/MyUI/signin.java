@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import mlhm.mohammed.milhemtruecaller.R;
 
 public class signin extends AppCompatActivity {
@@ -18,6 +20,12 @@ public class signin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        FirebaseAuth auth=FirebaseAuth.getInstance();
+        if (auth.getCurrentUser()!=null)
+        {
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        }
         //3
         setContentView(R.layout.activity_signin);
         etEmail = findViewById(R.id.etEmail);

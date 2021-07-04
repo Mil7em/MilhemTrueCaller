@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="116dp"
+        android:layout_height="34dp"
+        android:fontFamily="@font/merienda"
+        android:text="name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvType"
+        android:layout_width="141dp"
+        android:layout_height="23dp"
+        android:fontFamily="@font/merienda"
+        android:text="type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cbBuyIt"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="109dp"
+        android:layout_height="34dp"
+        android:fontFamily="@font/merienda"
+        android:text="amount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="106dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/merienda"
+        android:text="Delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvPrice"
+        app:layout_constraintTop_toBottomOf="@+id/tvType" />
+
+    <CheckBox
+        android:id="@+id/cbBuyIt"
+        android:layout_width="116dp"
+        android:layout_height="34dp"
+        android:fontFamily="@font/merienda"
+        android:text="buy"
+        app:layout_constraintStart_toEndOf="@+id/tvName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="80dp"
+        android:layout_height="34dp"
+        android:fontFamily="@font/merienda"
+        android:text="price"
+        app:layout_constraintStart_toEndOf="@+id/tvAmount"
+        app:layout_constraintTop_toBottomOf="@+id/cbBuyIt" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
